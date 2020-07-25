@@ -65,6 +65,7 @@ export default {
   methods: {
     createComponent(type) {
       // 当点击组件为当前组件时，关闭该组件
+      console.log('1111');
       this.$emit('selectFunc', type.component)
       if (this.currentComponentName === type.name) {
         this.currentComponentName = ''
