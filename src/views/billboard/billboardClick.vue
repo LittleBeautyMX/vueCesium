@@ -137,13 +137,4 @@ export default {
     margin: 10px;
   }
 }
-
-// 不知道为什么这里的样式没有起效果,我估计动态的弹框的样式应该要写在全局里，美欣你试试吧~加油加油
-.positioninfowidow {
-  position: absolute;
-  color: #666;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 2px 2px 6px rgba(102, 102, 102, 0.41);
-}
 </style>

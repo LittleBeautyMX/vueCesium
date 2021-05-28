@@ -7,6 +7,7 @@
 // import Cesium from 'cesium/Source/Cesium'
 import * as Cesium from 'cesium'
 import 'cesium/Source/Widgets/widgets.css'
+import { systemConfig } from '../../env.config';
 export default {
   mounted() {
     const viewer = new Cesium.Viewer('app', {
@@ -22,6 +23,13 @@ export default {
       timeline: false, // 是否显示时间轴
       navigationHelpButton: false, // 是否显示右上角的帮助按钮
       scene3DOnly: false, // 如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
+      imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
+        url: `http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=${systemConfig.tiandituToken}`,
+        layer: "tdtBasicLayer",
+        style: "default",
+        format: "image/jpeg",
+        tileMatrixSetID: "GoogleMapsCompatible"
+      })
     })
     window.viewer = viewer
   },
