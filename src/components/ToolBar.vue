@@ -1,3 +1,9 @@
+<!--
+ * @Descripttion: 
+ * @Author: meixinqiu
+ * @Date: 2021-05-28 16:26:43
+ * @LastEditTime: 2021-05-31 10:11:48
+-->
 <template>
   <div class="toolbarContainer">
     <div class="smartBtn">
@@ -16,7 +22,7 @@
             class="widget-button"
             @click="createComponent(item)"
           >
-            <i :class="['fontsmart', { [item.icon]: item.icon }]"></i>
+            <i :class="['cesiumiconfont', { [item.icon]: item.icon }]" :style="{'color': item.color, 'font-size': '20px'}" ></i>
           </div>
         </el-tooltip>
       </div>
@@ -31,34 +37,40 @@ export default {
       currentComponentName: '',
       toolBarArr: [
         {
-          name: 'billboardClick',
-          component: 'billboardClick',
-          icon: 'fs-tucengkongzhi'
-        }, {
-          name: '属性识别',
-          component: 'ElectricFenceComponent',
-          icon: 'fs-shuxingchaxun'
-        }, {
-          name: '坐标拾取',
-          component: 'PickpositionComponent',
-          icon: 'fs-zuobiao'
-        }, {
-          name: '室内行走模式',
-          component: 'ElectricFenceComponent',
-          icon: 'fs-shineihangzoumoshi'
-        }, {
-          name: '三维轨迹',
-          component: 'TrajectoryComponent',
-          icon: 'fs-sanweiguiji'
-        }, {
-          name: '监控设备点增删',
-          component: 'ElectricFenceComponent',
-          icon: 'fs-weizhibianji'
-        }, {
-          name: '区域管理',
-          component: 'RegionManagerComponent',
-          icon: 'fs-shuxingbianji'
+          name: '点聚合',
+          component: 'pointsClusting',
+          icon: 'cesium-icon-combine-full',
+          color: '#d4237a'
         },
+        // {
+        //   name: 'billboardClick',
+        //   component: 'billboardClick',
+        //   icon: 'fs-tucengkongzhi'
+        // }, {
+        //   name: '属性识别',
+        //   component: 'ElectricFenceComponent',
+        //   icon: 'fs-shuxingchaxun'
+        // }, {
+        //   name: '坐标拾取',
+        //   component: 'PickpositionComponent',
+        //   icon: 'fs-zuobiao'
+        // }, {
+        //   name: '室内行走模式',
+        //   component: 'ElectricFenceComponent',
+        //   icon: 'fs-shineihangzoumoshi'
+        // }, {
+        //   name: '三维轨迹',
+        //   component: 'TrajectoryComponent',
+        //   icon: 'fs-sanweiguiji'
+        // }, {
+        //   name: '监控设备点增删',
+        //   component: 'ElectricFenceComponent',
+        //   icon: 'fs-weizhibianji'
+        // }, {
+        //   name: '区域管理',
+        //   component: 'RegionManagerComponent',
+        //   icon: 'fs-shuxingbianji'
+        // },
       ]
     }
   },

@@ -1,3 +1,9 @@
+<!--
+ * @Descripttion: 
+ * @Author: meixinqiu
+ * @Date: 2021-05-28 16:26:43
+ * @LastEditTime: 2021-05-31 10:22:54
+-->
 <template>
   <div id="app">
     <the-map></the-map>
@@ -13,13 +19,17 @@
 <script>
 import TheMap from './components/TheMap'
 import ToolBar from './components/ToolBar'
+import pointsClusting from './views/clust/pointsClusting'
+
 import billboardClick from './views/billboard/billboardClick'
+
 export default {
   name: 'App',
   components: {
     TheMap,
     ToolBar,
-    billboardClick
+    pointsClusting,
+    billboardClick,
   },
   data() {
     return {
